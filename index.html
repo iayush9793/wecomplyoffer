@@ -1,0 +1,1989 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WeComplyOffer.com | Luxury National Consumer Services & Compliance Portal</title>
+    <link rel="icon" type="image/png" href="fav.png">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            darkest: '#050505',
+                            dark: '#0e0e0e',
+                            graphite: '#1a1a1a',
+                            emerald: '#059669',
+                            emeraldLight: '#34d399',
+                            emeraldDark: '#047857',
+                            platinum: '#e5e5e5',
+                            silver: '#a3a3a3',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    animation: {
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <style>
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(15, 15, 15, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-panel-emerald {
+            background: rgba(5, 150, 105, 0.05);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(5, 150, 105, 0.15);
+        }
+        .glass-nav {
+            background: rgba(5, 5, 5, 0.85);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Premium Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #050505;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1a1a1a;
+            border-radius: 4px;
+            border: 1px solid rgba(5, 150, 105, 0.2);
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #059669;
+        }
+
+        /* Hide Scrollbar helper */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-brand-darkest text-neutral-200 font-sans min-h-screen flex flex-col selection:bg-emerald-500 selection:text-white">
+
+    <!-- PRELOADER -->
+    <div id="preloader" class="fixed inset-0 z-[100] bg-brand-darkest flex flex-col items-center justify-center transition-all duration-1000">
+        <div class="relative flex flex-col items-center">
+            <!-- Animated Radial Glow -->
+            <div class="absolute -inset-10 bg-emerald-500/20 rounded-full blur-3xl animate-pulse-slow"></div>
+            
+            <!-- Luxury Logo Shield -->
+            <div class="relative mb-6 animate-bounce">
+                <svg class="w-24 h-24 text-emerald-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                    <path d="M9 11l2 2 4-4"/>
+                </svg>
+            </div>
+            
+            <h1 class="font-serif text-3xl tracking-widest text-white mb-2">WE<span class="text-emerald-400 font-sans font-extrabold">COMPLY</span>OFFER</h1>
+            <p class="text-xs text-neutral-400 tracking-[0.3em] uppercase">Premium Consumer Protections & Guidance</p>
+            
+            <!-- Progress Line -->
+            <div class="w-48 h-[2px] bg-neutral-900 mt-8 rounded-full overflow-hidden">
+                <div class="h-full bg-emerald-500 animate-[loading_1.5s_ease-in-out_forwards]" style="width: 0%; animation-name: loadProgress;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        @keyframes loadProgress {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+    </script>
+
+    <!-- FLOATING BACKGROUND ART -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+        <div class="absolute top-[10%] left-[-10%] w-[50vw] h-[50vw] rounded-full bg-emerald-950/10 blur-[150px] mix-blend-screen animate-pulse-slow"></div>
+        <div class="absolute bottom-[10%] right-[-10%] w-[40vw] h-[40vw] rounded-full bg-emerald-900/5 blur-[120px] mix-blend-screen animate-pulse-slow"></div>
+    </div>
+
+    <!-- GLASS HEADER & NAVIGATION -->
+    <header class="fixed top-0 inset-x-0 z-50 glass-nav transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center space-x-3 group">
+                <div class="bg-gradient-to-tr from-emerald-600 to-emerald-400 p-2 rounded-lg shadow-lg group-hover:scale-105 transition-transform duration-300">
+                    <i data-lucide="shield-check" class="w-6 h-6 text-brand-darkest"></i>
+                </div>
+                <div class="flex flex-col">
+                    <span class="font-serif text-xl tracking-wider text-white font-bold leading-none">WeComply<span class="text-emerald-400 font-sans font-extrabold">Offer</span></span>
+                    <span class="text-[9px] text-neutral-400 tracking-widest uppercase font-semibold">National Compliance Hub</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden lg:flex items-center space-x-8">
+                <a href="javascript:void(0)" onclick="navigateTo('home')" class="nav-link text-sm font-medium text-neutral-300 hover:text-white transition-colors duration-200 relative py-2">Home</a>
+                
+                <!-- Services Dropdown Trigger -->
+                <div class="relative group">
+                    <button class="flex items-center space-x-1 text-sm font-medium text-neutral-300 hover:text-white transition-colors duration-200 py-2">
+                        <span>Solutions</span>
+                        <i data-lucide="chevron-down" class="w-4 h-4 transition-transform duration-200 group-hover:rotate-180"></i>
+                    </button>
+                    <div class="absolute top-full left-0 w-64 mt-2 hidden group-hover:block glass-panel rounded-xl p-4 shadow-2xl border border-white/5 space-y-2 animate-fade-in">
+                        <a href="javascript:void(0)" onclick="navigateTo('mortgage')" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                            <i data-lucide="home" class="w-5 h-5 text-emerald-400"></i>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Mortgage Advisory</h4>
+                                <p class="text-xs text-neutral-400">Resource Guidance</p>
+                            </div>
+                        </a>
+                        <a href="javascript:void(0)" onclick="navigateTo('warranty')" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                            <i data-lucide="shield-alert" class="w-5 h-5 text-emerald-400"></i>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Home Warranty</h4>
+                                <p class="text-xs text-neutral-400">System Protection</p>
+                            </div>
+                        </a>
+                        <a href="javascript:void(0)" onclick="navigateTo('security')" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                            <i data-lucide="activity" class="w-5 h-5 text-emerald-400"></i>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Home Security</h4>
+                                <p class="text-xs text-neutral-400">Smart Protection Guides</p>
+                            </div>
+                        </a>
+                        <a href="javascript:void(0)" onclick="navigateTo('auto')" class="flex items-center space-x-3 p-2 rounded-lg hover:bg-white/5 transition-colors">
+                            <i data-lucide="car" class="w-5 h-5 text-emerald-400"></i>
+                            <div>
+                                <h4 class="text-sm font-semibold text-white">Auto Protection</h4>
+                                <p class="text-xs text-neutral-400">Vehicle Risk Advisories</p>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <a href="javascript:void(0)" onclick="navigateTo('resources')" class="nav-link text-sm font-medium text-neutral-300 hover:text-white transition-colors duration-200">Resources</a>
+                <a href="javascript:void(0)" onclick="navigateTo('about')" class="nav-link text-sm font-medium text-neutral-300 hover:text-white transition-colors duration-200">About Us</a>
+                <a href="javascript:void(0)" onclick="navigateTo('blog')" class="nav-link text-sm font-medium text-neutral-300 hover:text-white transition-colors duration-200">Insights</a>
+                <a href="javascript:void(0)" onclick="navigateTo('compliance')" class="nav-link text-sm font-medium text-emerald-400 hover:text-emerald-300 transition-colors duration-200 flex items-center space-x-1">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Compliance Center</span>
+                </a>
+            </nav>
+
+            <!-- Call to Action and Mobile Menu Toggle -->
+            <div class="flex items-center space-x-4">
+                <button onclick="openWizard()" class="hidden md:flex items-center space-x-2 bg-gradient-to-r from-emerald-600 to-emerald-500 hover:from-emerald-500 hover:to-emerald-400 text-white font-semibold text-xs uppercase tracking-wider px-6 py-3 rounded-full transition-all duration-300 transform hover:-translate-y-0.5 hover:shadow-lg hover:shadow-emerald-950/50">
+                    <i data-lucide="clipboard-check" class="w-4 h-4"></i>
+                    <span>Verify Eligibility</span>
+                </button>
+                
+                <button id="mobile-menu-btn" class="lg:hidden p-2 text-neutral-300 hover:text-white transition-colors">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Navigation -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-darkest/95 backdrop-blur-xl border-b border-white/5 px-6 py-6 space-y-4">
+            <a href="javascript:void(0)" onclick="navigateTo('home'); toggleMobileMenu()" class="block text-lg font-medium text-neutral-200">Home</a>
+            <div class="border-t border-white/5 pt-4 space-y-3">
+                <p class="text-xs uppercase tracking-widest text-emerald-400 font-semibold">Our Programs</p>
+                <a href="javascript:void(0)" onclick="navigateTo('mortgage'); toggleMobileMenu()" class="block text-sm text-neutral-300 ml-2">Mortgage Resources</a>
+                <a href="javascript:void(0)" onclick="navigateTo('warranty'); toggleMobileMenu()" class="block text-sm text-neutral-300 ml-2">Home Warranty Protection</a>
+                <a href="javascript:void(0)" onclick="navigateTo('security'); toggleMobileMenu()" class="block text-sm text-neutral-300 ml-2">Smart Home Security</a>
+                <a href="javascript:void(0)" onclick="navigateTo('auto'); toggleMobileMenu()" class="block text-sm text-neutral-300 ml-2">Auto Insurance Guidance</a>
+            </div>
+            <div class="border-t border-white/5 pt-4 space-y-3">
+                <a href="javascript:void(0)" onclick="navigateTo('resources'); toggleMobileMenu()" class="block text-lg font-medium text-neutral-200">Resource Hub</a>
+                <a href="javascript:void(0)" onclick="navigateTo('about'); toggleMobileMenu()" class="block text-lg font-medium text-neutral-200">About Us</a>
+                <a href="javascript:void(0)" onclick="navigateTo('blog'); toggleMobileMenu()" class="block text-lg font-medium text-neutral-200">Blog Insights</a>
+                <a href="javascript:void(0)" onclick="navigateTo('compliance'); toggleMobileMenu()" class="block text-lg font-medium text-emerald-400 font-semibold">Compliance Center</a>
+            </div>
+            <button onclick="openWizard(); toggleMobileMenu()" class="w-full flex items-center justify-center space-x-2 bg-emerald-500 hover:bg-emerald-400 text-brand-darkest font-extrabold text-sm uppercase tracking-wider py-4 rounded-xl transition-all">
+                <i data-lucide="clipboard-check" class="w-5 h-5"></i>
+                <span>Check Eligibility</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- CONTENT CONTAINERS FOR SPA PAGE TOGGLING -->
+    <div class="pt-20 flex-grow z-10 relative">
+
+        <!-- ============================================== -->
+        <!-- 1. HOME PAGE -->
+        <!-- ============================================== -->
+        <section id="page-home" class="page-section">
+            <!-- MASSIVE HERO SECTION WITH PARALLAX SLIDESHOW -->
+            <div class="relative min-h-[90vh] flex items-center justify-center overflow-hidden py-20 px-6">
+                <!-- Overlay Gradients -->
+                <div class="absolute inset-0 bg-gradient-to-r from-brand-darkest via-brand-darkest/90 to-transparent z-10"></div>
+                <div class="absolute inset-0 bg-gradient-to-t from-brand-darkest via-transparent to-transparent z-10"></div>
+                
+                <!-- Background Slideshow Images -->
+                <div id="hero-slides" class="absolute inset-0 z-0">
+                    <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-100" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1920&q=80')"></div>
+                    <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1920&q=80')"></div>
+                    <div class="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 opacity-0" style="background-image: url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1920&q=80')"></div>
+                </div>
+
+                <!-- Floating Particle Effect Overlay -->
+                <div class="absolute inset-0 z-10 mix-blend-overlay opacity-30 pointer-events-none">
+                    <div class="absolute w-2 h-2 bg-emerald-400 rounded-full animate-float top-1/4 left-1/3"></div>
+                    <div class="absolute w-3 h-3 bg-emerald-500 rounded-full animate-float top-2/3 left-1/4" style="animation-delay: 2s;"></div>
+                    <div class="absolute w-1.5 h-1.5 bg-emerald-300 rounded-full animate-float top-1/3 left-2/3" style="animation-delay: 4s;"></div>
+                </div>
+
+                <!-- Hero Content -->
+                <div class="relative z-20 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-8 text-left">
+                        <!-- Upper Badge -->
+                        <div class="inline-flex items-center space-x-2 glass-panel-emerald px-4 py-2 rounded-full border border-emerald-500/30">
+                            <i data-lucide="shield" class="w-4 h-4 text-emerald-400"></i>
+                            <span class="text-xs uppercase tracking-widest text-emerald-300 font-bold">Official Consumer Advocacy Hub</span>
+                        </div>
+                        
+                        <!-- Main Title -->
+                        <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight text-white leading-tight">
+                            Securing Your <br>
+                            <span class="bg-gradient-to-r from-emerald-400 via-emerald-200 to-white bg-clip-text text-transparent italic">Financial Legacy</span>
+                        </h1>
+                        
+                        <!-- Rich Subtext -->
+                        <p class="text-lg md:text-xl text-neutral-300 max-w-2xl font-light leading-relaxed">
+                            WeComplyOffer.com is the nation's premier educational destination. We align rigorous safety, security, and mortgage guidance with world-class advisory protection for elite homeowners.
+                        </p>
+                        
+                        <!-- Quick Stats Rows -->
+                        <div class="grid grid-cols-3 gap-6 pt-4 border-t border-white/5">
+                            <div>
+                                <h3 class="text-3xl font-extrabold text-white tracking-tight" id="count-users">425k+</h3>
+                                <p class="text-xs uppercase tracking-widest text-neutral-400 mt-1">Families Served</p>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-extrabold text-white tracking-tight" id="count-compliance">100%</h3>
+                                <p class="text-xs uppercase tracking-widest text-neutral-400 mt-1">TCPA Secure</p>
+                            </div>
+                            <div>
+                                <h3 class="text-3xl font-extrabold text-white tracking-tight" id="count-accuracy">A+</h3>
+                                <p class="text-xs uppercase tracking-widest text-neutral-400 mt-1">Trust Rating</p>
+                            </div>
+                        </div>
+
+                        <!-- CTA Row -->
+                        <div class="flex flex-col sm:flex-row items-stretch sm:items-center space-y-4 sm:space-y-0 sm:space-x-4 pt-4">
+                            <button onclick="openWizard()" class="bg-gradient-to-r from-emerald-600 to-emerald-400 hover:from-emerald-500 hover:to-emerald-300 text-white font-extrabold text-sm uppercase tracking-widest px-8 py-5 rounded-xl shadow-xl shadow-emerald-950/50 transform hover:-translate-y-1 transition-all duration-300 flex items-center justify-center space-x-3">
+                                <span>Verify Your Eligibility</span>
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </button>
+                            <button onclick="navigateTo('resources')" class="glass-panel hover:bg-white/10 text-neutral-200 hover:text-white font-bold text-sm uppercase tracking-widest px-8 py-5 rounded-xl transition-all duration-300 border border-white/10 hover:border-white/25 flex items-center justify-center space-x-2">
+                                <span>Browse Resource Library</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Floating Interactive Lead Intake Card -->
+                    <div class="lg:col-span-5">
+                        <div class="glass-panel p-8 rounded-3xl relative overflow-hidden shadow-2xl border border-white/10 shadow-emerald-950/20">
+                            <!-- Background gradient flare -->
+                            <div class="absolute -right-16 -top-16 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
+                            
+                            <h3 class="text-2xl font-serif text-white mb-2">Check Protection Eligibility</h3>
+                            <p class="text-sm text-neutral-400 mb-6">No obligation. Strict privacy & compliance protocols strictly observed.</p>
+                            
+                            <div class="space-y-4">
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-neutral-400 mb-2 font-semibold">Select Focus Category</label>
+                                    <select id="hero-select-category" class="w-full bg-brand-darkest/80 border border-neutral-800 rounded-xl px-4 py-3.5 text-sm text-neutral-200 focus:outline-none focus:border-emerald-500 transition-colors">
+                                        <option value="mortgage">Mortgage & Equity Advisory</option>
+                                        <option value="warranty">Home Warranty Infrastructure</option>
+                                        <option value="security">Residential Smart Security</option>
+                                        <option value="auto">Auto Asset Protection</option>
+                                    </select>
+                                </div>
+                                
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-neutral-400 mb-2 font-semibold">Home Ownership Status</label>
+                                    <div class="grid grid-cols-2 gap-3">
+                                        <button onclick="selectHeroOwnerStatus('own')" id="btn-hero-own" class="border border-emerald-500/40 bg-emerald-500/10 text-white text-xs font-bold py-3 rounded-xl transition-all">I Own a Home</button>
+                                        <button onclick="selectHeroOwnerStatus('buy')" id="btn-hero-buy" class="border border-neutral-800 bg-neutral-900/40 text-neutral-400 hover:text-white text-xs font-bold py-3 rounded-xl transition-all">I am Buying</button>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label class="block text-xs uppercase tracking-wider text-neutral-400 mb-2 font-semibold">U.S. Zip Code</label>
+                                    <input type="text" id="hero-zip" placeholder="Enter Zip Code" class="w-full bg-brand-darkest/80 border border-neutral-800 rounded-xl px-4 py-3.5 text-sm text-neutral-200 focus:outline-none focus:border-emerald-500 transition-colors">
+                                </div>
+
+                                <button onclick="triggerHeroForm()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-brand-darkest font-extrabold text-sm uppercase tracking-widest py-4 rounded-xl transition-all shadow-lg hover:shadow-emerald-500/20 transform hover:-translate-y-0.5 mt-2">
+                                    Initiate Verification
+                                </button>
+                                
+                                <p class="text-[10px] text-center text-neutral-500 leading-normal">
+                                    By proceeding, you consent to secure data protection. We strictly abide by the FTC Safeguards Rule.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TRUST SYMBOL ROW -->
+            <div class="border-y border-white/5 bg-brand-dark/40 py-8 px-6">
+                <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-8">
+                    <p class="text-xs uppercase tracking-[0.25em] text-neutral-400 font-semibold mx-auto lg:mx-0 text-center">Rigorous Regulatory Audits & Partnerships</p>
+                    <div class="flex flex-wrap justify-center items-center gap-8 md:gap-12 mx-auto lg:mx-0">
+                        <span class="text-neutral-500 font-bold tracking-wider hover:text-neutral-300 transition-colors cursor-default text-lg flex items-center space-x-2">
+                            <i data-lucide="shield" class="w-5 h-5 text-emerald-400"></i>
+                            <span>SECURE DATA v2</span>
+                        </span>
+                        <span class="text-neutral-500 font-bold tracking-wider hover:text-neutral-300 transition-colors cursor-default text-lg flex items-center space-x-2">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-emerald-400"></i>
+                            <span>FCRA AUDITED</span>
+                        </span>
+                        <span class="text-neutral-500 font-bold tracking-wider hover:text-neutral-300 transition-colors cursor-default text-lg flex items-center space-x-2">
+                            <i data-lucide="file-text" class="w-5 h-5 text-emerald-400"></i>
+                            <span>GLBA COMPLIANT</span>
+                        </span>
+                        <span class="text-neutral-500 font-bold tracking-wider hover:text-neutral-300 transition-colors cursor-default text-lg flex items-center space-x-2">
+                            <i data-lucide="thumbs-up" class="w-5 h-5 text-emerald-400"></i>
+                            <span>TCPA ASSURED</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CORE ADVOCACY CATEGORIES (THE 4 PILLARS) -->
+            <div class="py-24 px-6 max-w-7xl mx-auto">
+                <div class="text-center max-w-3xl mx-auto mb-16 space-y-4">
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.3em]">Consumer Guidance Areas</span>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold text-white">Interactive Advisory Portals</h2>
+                    <p class="text-neutral-400 font-light text-base">We filter and monitor the country’s leading programs to provide verified protection pathways for luxury residential structures.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Pillar 1: Mortgage -->
+                    <div class="glass-panel group p-8 rounded-2xl border border-white/5 hover:border-emerald-500/20 hover:bg-neutral-900/80 transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:bg-emerald-500 group-hover:text-brand-darkest transition-all">
+                                <i data-lucide="home" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Mortgage Resources</h3>
+                            <p class="text-sm text-neutral-400 leading-relaxed mb-6">Uncover national programs, dynamic equity guides, and conforming guidelines tailored to preserve estate value.</p>
+                        </div>
+                        <a href="javascript:void(0)" onclick="navigateTo('mortgage')" class="text-xs uppercase tracking-widest text-emerald-400 font-bold hover:text-emerald-300 transition-colors flex items-center space-x-1 mt-4">
+                            <span>Explore Resources</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Pillar 2: Home Warranty -->
+                    <div class="glass-panel group p-8 rounded-2xl border border-white/5 hover:border-emerald-500/20 hover:bg-neutral-900/80 transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:bg-emerald-500 group-hover:text-brand-darkest transition-all">
+                                <i data-lucide="shield-alert" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Home Warranty</h3>
+                            <p class="text-sm text-neutral-400 leading-relaxed mb-6">Protect complete home infrastructure, mechanical systems, and precision appliances from unforeseen breakdowns.</p>
+                        </div>
+                        <a href="javascript:void(0)" onclick="navigateTo('warranty')" class="text-xs uppercase tracking-widest text-emerald-400 font-bold hover:text-emerald-300 transition-colors flex items-center space-x-1 mt-4">
+                            <span>Explore Warranties</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Pillar 3: Home Security -->
+                    <div class="glass-panel group p-8 rounded-2xl border border-white/5 hover:border-emerald-500/20 hover:bg-neutral-900/80 transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:bg-emerald-500 group-hover:text-brand-darkest transition-all">
+                                <i data-lucide="activity" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Home Security</h3>
+                            <p class="text-sm text-neutral-400 leading-relaxed mb-6">Assess advanced dynamic monitoring, integrated threat analytics, and high-performance automated camera configurations.</p>
+                        </div>
+                        <a href="javascript:void(0)" onclick="navigateTo('security')" class="text-xs uppercase tracking-widest text-emerald-400 font-bold hover:text-emerald-300 transition-colors flex items-center space-x-1 mt-4">
+                            <span>Explore Security</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+
+                    <!-- Pillar 4: Auto Insurance -->
+                    <div class="glass-panel group p-8 rounded-2xl border border-white/5 hover:border-emerald-500/20 hover:bg-neutral-900/80 transition-all duration-300 transform hover:-translate-y-2 flex flex-col justify-between">
+                        <div>
+                            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:bg-emerald-500 group-hover:text-brand-darkest transition-all">
+                                <i data-lucide="car" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white mb-3">Auto Asset Protection</h3>
+                            <p class="text-sm text-neutral-400 leading-relaxed mb-6">Discover elite vehicular risk shielding options and complete asset liability guides for prestige properties and garages.</p>
+                        </div>
+                        <a href="javascript:void(0)" onclick="navigateTo('auto')" class="text-xs uppercase tracking-widest text-emerald-400 font-bold hover:text-emerald-300 transition-colors flex items-center space-x-1 mt-4">
+                            <span>Explore Protection</span>
+                            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LARGE ALTERNATING HIGH-END STORYTELLING SECTION -->
+            <div class="bg-brand-dark/30 py-24 border-y border-white/5">
+                <div class="max-w-7xl mx-auto px-6 space-y-24">
+                    
+                    <!-- Item 1: Image Left, Content Right -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-6 relative">
+                            <!-- Overlay Decorative Border Frame -->
+                            <div class="absolute -inset-2 border border-emerald-500/20 rounded-3xl translate-x-3 translate-y-3"></div>
+                            <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Luxury Interior" class="relative rounded-2xl shadow-2xl w-full object-cover h-[450px]">
+                            
+                            <!-- Floating Trust Widget -->
+                            <div class="absolute bottom-6 right-6 glass-panel p-4 rounded-xl flex items-center space-x-3 border border-emerald-500/30">
+                                <i data-lucide="shield" class="w-8 h-8 text-emerald-400"></i>
+                                <div>
+                                    <h4 class="text-xs uppercase tracking-widest text-neutral-400 font-bold">Encrypted Connection</h4>
+                                    <p class="text-sm font-semibold text-white">SOC-2 Certified Vault</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="lg:col-span-6 space-y-6">
+                            <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Holistic Household Stability</span>
+                            <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">Unified Architectural & Financial Safeguards</h2>
+                            <p class="text-neutral-300 font-light leading-relaxed">
+                                True premium homeownership represents more than an asset; it is the physical locus of generations of progress. WeComplyOffer.com approaches consumer services with a total protection mindset, helping you structure compliance reviews, system security, and auto asset guidance in a streamlined portal.
+                            </p>
+                            
+                            <ul class="space-y-3 text-sm text-neutral-300">
+                                <li class="flex items-center space-x-3">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
+                                    <span>Strict alignment with consumer privacy legislation</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
+                                    <span>Comprehensive, plain-language educational resources</span>
+                                </li>
+                                <li class="flex items-center space-x-3">
+                                    <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400"></i>
+                                    <span>Zero hidden pricing tables or unauthorized calls</span>
+                                </li>
+                            </ul>
+                            
+                            <div class="pt-4">
+                                <button onclick="navigateTo('about')" class="text-sm font-bold uppercase tracking-widest text-emerald-400 hover:text-emerald-300 transition-colors flex items-center space-x-2 group">
+                                    <span>Learn Our Advocacy Mission</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Image Right, Content Left -->
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-6 space-y-6 order-2 lg:order-1">
+                            <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Absolute Data Sovereignty</span>
+                            <h2 class="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-white leading-tight">National Security Compliance Protocols</h2>
+                            <p class="text-neutral-300 font-light leading-relaxed">
+                                In an era saturated with invasive marketing practices, WeComplyOffer.com delivers a fortress of compliance protection. Your educational journey is safeguarded by elite-tier security layers that reject aggressive robocall lists and unsolicited advertising.
+                            </p>
+                            
+                            <div class="grid grid-cols-2 gap-4 pt-4">
+                                <div class="glass-panel p-4 rounded-xl border border-white/5">
+                                    <h4 class="text-white font-bold text-base flex items-center space-x-2">
+                                        <i data-lucide="file-check" class="w-4 h-4 text-emerald-400"></i>
+                                        <span>FCRA Compliant</span>
+                                    </h4>
+                                    <p class="text-xs text-neutral-400 mt-1">Rigorous adherence to federal credit and informational standards.</p>
+                                </div>
+                                <div class="glass-panel p-4 rounded-xl border border-white/5">
+                                    <h4 class="text-white font-bold text-base flex items-center space-x-2">
+                                        <i data-lucide="lock" class="w-4 h-4 text-emerald-400"></i>
+                                        <span>CCPA/GDPR Ready</span>
+                                    </h4>
+                                    <p class="text-xs text-neutral-400 mt-1">Robust user controls regarding personal data distribution preferences.</p>
+                                </div>
+                            </div>
+
+                            <div class="pt-4">
+                                <button onclick="navigateTo('compliance')" class="text-sm font-bold uppercase tracking-widest text-emerald-400 hover:text-emerald-300 transition-colors flex items-center space-x-2 group">
+                                    <span>Visit Compliance Center</span>
+                                    <i data-lucide="arrow-right" class="w-4 h-4 transform group-hover:translate-x-1 transition-transform"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-6 relative order-1 lg:order-2">
+                            <div class="absolute -inset-2 border border-emerald-500/20 rounded-3xl -translate-x-3 translate-y-3"></div>
+                            <img src="https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80" alt="Secure Home Tech" class="relative rounded-2xl shadow-2xl w-full object-cover h-[450px]">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DYNAMIC INTERACTIVE ADVISORY PANEL -->
+            <div class="py-24 max-w-7xl mx-auto px-6">
+                <div class="glass-panel p-8 md:p-12 rounded-3xl border border-white/5 relative overflow-hidden">
+                    <div class="absolute -right-32 -bottom-32 w-96 h-96 bg-emerald-500/5 rounded-full blur-[100px]"></div>
+                    
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-5 space-y-6">
+                            <span class="text-emerald-400 text-xs font-bold uppercase tracking-widest">Advisory Tool</span>
+                            <h3 class="font-serif text-3xl md:text-4xl text-white font-bold">Interactive Resource Matcher</h3>
+                            <p class="text-neutral-400 text-sm leading-relaxed">
+                                Answer three basic queries to receive a highly filtered educational program curriculum configured specifically for your estate's geographic parameters.
+                            </p>
+                            
+                            <div class="space-y-3">
+                                <div class="flex items-center space-x-3 text-xs text-neutral-400">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                    <span>Real-time curation based on regional compliance criteria</span>
+                                </div>
+                                <div class="flex items-center space-x-3 text-xs text-neutral-400">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                    <span>Strictly educational, non-invasive assessment</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="lg:col-span-7 bg-brand-darkest/60 border border-white/5 p-8 rounded-2xl shadow-inner">
+                            <div id="matcher-step-1" class="space-y-6">
+                                <h4 class="text-lg font-semibold text-white">Step 1: Select Primary Goal</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <button onclick="setMatcherGoal('mortgage')" class="matcher-btn p-4 rounded-xl border border-neutral-800 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all text-left flex items-start space-x-3">
+                                        <i data-lucide="home" class="w-5 h-5 text-emerald-400 mt-1"></i>
+                                        <div>
+                                            <p class="font-semibold text-white text-sm">Optimize Mortgage</p>
+                                            <p class="text-xs text-neutral-500 mt-1">Refinancing, debt structuring & legal guidelines.</p>
+                                        </div>
+                                    </button>
+                                    <button onclick="setMatcherGoal('warranty')" class="matcher-btn p-4 rounded-xl border border-neutral-800 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all text-left flex items-start space-x-3">
+                                        <i data-lucide="shield-alert" class="w-5 h-5 text-emerald-400 mt-1"></i>
+                                        <div>
+                                            <p class="font-semibold text-white text-sm">System Protection</p>
+                                            <p class="text-xs text-neutral-500 mt-1">Warranty advisory & breakdown protocols.</p>
+                                        </div>
+                                    </button>
+                                    <button onclick="setMatcherGoal('security')" class="matcher-btn p-4 rounded-xl border border-neutral-800 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all text-left flex items-start space-x-3">
+                                        <i data-lucide="activity" class="w-5 h-5 text-emerald-400 mt-1"></i>
+                                        <div>
+                                            <p class="font-semibold text-white text-sm">Residential Security</p>
+                                            <p class="text-xs text-neutral-500 mt-1">Smart tech audits & 24/7 security standards.</p>
+                                        </div>
+                                    </button>
+                                    <button onclick="setMatcherGoal('auto')" class="matcher-btn p-4 rounded-xl border border-neutral-800 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all text-left flex items-start space-x-3">
+                                        <i data-lucide="car" class="w-5 h-5 text-emerald-400 mt-1"></i>
+                                        <div>
+                                            <p class="font-semibold text-white text-sm">Auto Security</p>
+                                            <p class="text-xs text-neutral-500 mt-1">Luxury vehicles liability protection.</p>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div id="matcher-step-2" class="hidden space-y-6">
+                                <h4 class="text-lg font-semibold text-white">Step 2: Curation Scope</h4>
+                                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                    <button onclick="setMatcherScope('essential')" class="p-4 rounded-xl border border-neutral-800 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all text-left">
+                                        <p class="font-semibold text-white text-sm">General Education</p>
+                                        <p class="text-xs text-neutral-500 mt-1">For homeowners beginning their program reviews.</p>
+                                    </button>
+                                    <button onclick="setMatcherScope('extended')" class="p-4 rounded-xl border border-neutral-800 hover:border-emerald-500/50 hover:bg-emerald-500/5 transition-all text-left">
+                                        <p class="font-semibold text-white text-sm">Custom Structural Audit</p>
+                                        <p class="text-xs text-neutral-500 mt-1">Specific regional provider evaluation guidelines.</p>
+                                    </button>
+                                </div>
+                                <div class="flex justify-between pt-4 border-t border-neutral-800">
+                                    <button onclick="prevMatcherStep(1)" class="text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">Go Back</button>
+                                </div>
+                            </div>
+
+                            <div id="matcher-step-3" class="hidden space-y-6">
+                                <h4 class="text-lg font-semibold text-white">Step 3: Verification Destination</h4>
+                                <p class="text-sm text-neutral-400">Where should we deliver your compliance verification guidelines?</p>
+                                <div class="space-y-4">
+                                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                        <input type="text" id="matcher-name" placeholder="Full Name" class="bg-brand-darkest border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 text-white">
+                                        <input type="email" id="matcher-email" placeholder="E-mail Address" class="bg-brand-darkest border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 text-white">
+                                    </div>
+                                    <button onclick="submitMatcher()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-brand-darkest font-extrabold text-sm uppercase tracking-widest py-4 rounded-xl transition-all">
+                                        Compile Resource Curation
+                                    </button>
+                                </div>
+                                <div class="flex justify-between pt-4 border-t border-neutral-800">
+                                    <button onclick="prevMatcherStep(2)" class="text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">Go Back</button>
+                                </div>
+                            </div>
+
+                            <div id="matcher-success" class="hidden text-center py-12 space-y-6">
+                                <div class="w-16 h-16 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-400 mx-auto">
+                                    <i data-lucide="check-circle" class="w-10 h-10"></i>
+                                </div>
+                                <div class="space-y-2">
+                                    <h4 class="text-2xl font-serif text-white font-bold">Curation Assembled</h4>
+                                    <p class="text-sm text-neutral-400 max-w-md mx-auto">Your verification credentials have been initialized under Compliance Seal No. <span class="text-emerald-400 font-mono font-semibold" id="matcher-seal">#WCO-9024</span>.</p>
+                                </div>
+                                <button onclick="resetMatcher()" class="text-xs font-bold uppercase tracking-widest text-emerald-400 hover:text-emerald-300 transition-colors">Run New Analysis</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PREMIUM TESTIMONIAL CAROUSEL -->
+            <div class="bg-brand-dark/40 py-24 border-t border-white/5">
+                <div class="max-w-7xl mx-auto px-6">
+                    <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+                        <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.3em]">Consumer Testimonials</span>
+                        <h2 class="font-serif text-3xl md:text-4xl font-bold text-white">Words From Certified Households</h2>
+                        <p class="text-neutral-400 font-light text-sm">Read real feedback from elite homeowners who utilized our compliance resource modules.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="glass-panel p-8 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <p class="text-neutral-300 text-sm leading-relaxed italic">
+                                "The compliance reviews at WeComplyOffer made our residential smart home security overhaul incredibly streamlined. The educational checklist was our prime guide to vendor comparisons."
+                            </p>
+                            <div class="flex items-center space-x-4 mt-8 border-t border-white/5 pt-6">
+                                <div class="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-brand-darkest font-extrabold text-sm">AM</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Alexander Mercer</h4>
+                                    <p class="text-xs text-neutral-400">Homeowner | Santa Barbara, CA</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel p-8 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <p class="text-neutral-300 text-sm leading-relaxed italic">
+                                "Our mortgage search was stagnant until we engaged with the Refinancing Timeline guide. No rates displayed, but the educational mechanics was the clearest breakdown we found online."
+                            </p>
+                            <div class="flex items-center space-x-4 mt-8 border-t border-white/5 pt-6">
+                                <div class="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-brand-darkest font-extrabold text-sm">KH</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">Katherine Hayes</h4>
+                                    <p class="text-xs text-neutral-400">Asset Management | Miami, FL</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel p-8 rounded-2xl border border-white/5 flex flex-col justify-between">
+                            <p class="text-neutral-300 text-sm leading-relaxed italic">
+                                "I highly appreciate WeComplyOffer's strict non-robocall compliance policies. It was a relief to read materials without being blasted by spam calls. Truly luxury service."
+                            </p>
+                            <div class="flex items-center space-x-4 mt-8 border-t border-white/5 pt-6">
+                                <div class="w-10 h-10 rounded-full bg-emerald-500 flex items-center justify-center text-brand-darkest font-extrabold text-sm">DB</div>
+                                <div>
+                                    <h4 class="text-sm font-bold text-white">David Beckwith</h4>
+                                    <p class="text-xs text-neutral-400">Architectural Advisor | Seattle, WA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 2. ABOUT US -->
+        <!-- ============================================== -->
+        <section id="page-about" class="page-section hidden">
+            <div class="max-w-7xl mx-auto px-6 py-16 space-y-20">
+                <!-- Hero Banner -->
+                <div class="relative rounded-3xl overflow-hidden min-h-[400px] flex items-center px-8 md:px-12 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=1920&q=80')">
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-darkest/95 to-brand-darkest/40 z-10"></div>
+                    <div class="relative z-20 max-w-2xl space-y-4">
+                        <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Our Legacy & Core Mission</span>
+                        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white">WeComplyOffer.com</h1>
+                        <p class="text-neutral-300 text-sm md:text-base leading-relaxed font-light">
+                            Constructing premium frameworks of consumer support across America. We prioritize the protection of residential real estate and vehicular high-liability portfolios through stringent regulatory compliance.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Mission and Values -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                    <div class="space-y-6">
+                        <h2 class="font-serif text-3xl font-bold text-white">Advocacy Formed on Transparency</h2>
+                        <p class="text-neutral-300 text-sm leading-relaxed">
+                            Formed by industry veterans across real estate, legal compliance, and smart infrastructure engineering, WeComplyOffer.com serves as a neutral knowledge gateway. Our model is built entirely around educating consumer bases, ensuring families make highly informed protection arrangements without pressure.
+                        </p>
+                        <p class="text-neutral-300 text-sm leading-relaxed">
+                            We discard standard lead aggregator techniques. No aggressive follow-ups, no rates manipulations, and zero pressure arrays. We believe structured intelligence is the ultimate form of asset protection.
+                        </p>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="glass-panel p-6 rounded-2xl border border-white/5 space-y-3">
+                            <i data-lucide="shield-check" class="w-8 h-8 text-emerald-400"></i>
+                            <h4 class="text-base font-bold text-white">Regulatory Focus</h4>
+                            <p class="text-xs text-neutral-400">Total compliance under the Dodd-Frank Act, TCPA regulations, and FTC directives.</p>
+                        </div>
+                        <div class="glass-panel p-6 rounded-2xl border border-white/5 space-y-3">
+                            <i data-lucide="award" class="w-8 h-8 text-emerald-400"></i>
+                            <h4 class="text-base font-bold text-white">Uncompromising Quality</h4>
+                            <p class="text-xs text-neutral-400">We audit and update our educational structures to align with the absolute latest trends in smart tech and real estate.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Luxury Executive Profile Grid -->
+                <div class="space-y-8">
+                    <div class="text-center max-w-2xl mx-auto space-y-3">
+                        <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Executive Board</span>
+                        <h2 class="font-serif text-3xl font-bold text-white">Our Senior Leadership</h2>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="glass-panel rounded-2xl overflow-hidden border border-white/5">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="p-6 space-y-1">
+                                <h4 class="text-lg font-bold text-white">Julian Sterling</h4>
+                                <p class="text-xs text-emerald-400 font-semibold uppercase tracking-wider">Managing Partner & Founder</p>
+                                <p class="text-xs text-neutral-400 pt-3 border-t border-white/5 mt-3">Former Principal real estate legal counsel with 18+ years of consumer law expertise.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel rounded-2xl overflow-hidden border border-white/5">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="p-6 space-y-1">
+                                <h4 class="text-lg font-bold text-white">Genevieve Vance</h4>
+                                <p class="text-xs text-emerald-400 font-semibold uppercase tracking-wider">Chief of National Compliance</p>
+                                <p class="text-xs text-neutral-400 pt-3 border-t border-white/5 mt-3">Dedicated compliance oversight officer monitoring federal guidelines across all program models.</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-panel rounded-2xl overflow-hidden border border-white/5">
+                            <div class="h-64 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80')"></div>
+                            <div class="p-6 space-y-1">
+                                <h4 class="text-lg font-bold text-white">Marcus Thorne</h4>
+                                <p class="text-xs text-emerald-400 font-semibold uppercase tracking-wider">Director of Smart Tech Research</p>
+                                <p class="text-xs text-neutral-400 pt-3 border-t border-white/5 mt-3">Pioneering automation engineer reviewing home system lifespans and security technologies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 3. MORTGAGE RESOURCES -->
+        <!-- ============================================== -->
+        <section id="page-mortgage" class="page-section hidden">
+            <div class="max-w-7xl mx-auto px-6 py-16 space-y-20">
+                <!-- Custom Hero Banner -->
+                <div class="relative rounded-3xl overflow-hidden min-h-[400px] flex items-center px-8 md:px-12 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1920&q=80')">
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-darkest/95 to-brand-darkest/40 z-10"></div>
+                    <div class="relative z-20 max-w-2xl space-y-4">
+                        <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Premium Financing Strategy</span>
+                        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white">Mortgage & Capital Curation</h1>
+                        <p class="text-neutral-300 text-sm md:text-base leading-relaxed font-light">
+                            Navigate complex financing horizons, asset restructuring guidelines, and regulatory frameworks. We do not promote variable rates or third-party bank promotions; instead, we offer pristine structural logic to preserve household capital.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Features & Timeline -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <h2 class="font-serif text-3xl font-bold text-white">The Luxury Refinancing Matrix</h2>
+                        <p class="text-neutral-300 text-sm leading-relaxed">
+                            Refinancing is more than reducing monthly payments; it is a tactical reconfiguration of your estate’s equity. Under our educational frameworks, you will understand amortization shifts, custom luxury property valuation considerations, and compliant debt structure solutions.
+                        </p>
+                        
+                        <div class="space-y-4 mt-8">
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-emerald-500/10 p-2 rounded-lg text-emerald-400">1</div>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Amortization Optimization</h4>
+                                    <p class="text-xs text-neutral-400 mt-1">Understanding interest trajectories over complex property milestones.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-emerald-500/10 p-2 rounded-lg text-emerald-400">2</div>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Dynamic Equity Curation</h4>
+                                    <p class="text-xs text-neutral-400 mt-1">Structuring home equity release options to cover architectural expansions or luxury upgrades safely.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start space-x-4">
+                                <div class="bg-emerald-500/10 p-2 rounded-lg text-emerald-400">3</div>
+                                <div>
+                                    <h4 class="text-white font-bold text-sm">Compliance Safeguards</h4>
+                                    <p class="text-xs text-neutral-400 mt-1">Avoiding predatory private placements or unverified lenders operating outside Dodd-Frank standards.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5">
+                        <div class="glass-panel p-8 rounded-2xl border border-white/5 space-y-6">
+                            <h3 class="text-lg font-bold text-white">Interactive Document Checklist</h3>
+                            <p class="text-xs text-neutral-400">Ensure you have compiled these essential documents for a clean regulatory mortgage review.</p>
+                            
+                            <div class="space-y-3">
+                                <div onclick="toggleCheckItem(this)" class="flex items-center justify-between p-3 rounded-xl bg-brand-darkest/60 border border-neutral-800 hover:border-emerald-500/30 cursor-pointer transition-colors">
+                                    <span class="text-xs font-semibold text-neutral-300">W-2 Forms / Tax Returns (Two Years)</span>
+                                    <i data-lucide="square" class="w-4 h-4 text-neutral-600"></i>
+                                </div>
+                                <div onclick="toggleCheckItem(this)" class="flex items-center justify-between p-3 rounded-xl bg-brand-darkest/60 border border-neutral-800 hover:border-emerald-500/30 cursor-pointer transition-colors">
+                                    <span class="text-xs font-semibold text-neutral-300">Paystubs (30 Days Cumulative)</span>
+                                    <i data-lucide="square" class="w-4 h-4 text-neutral-600"></i>
+                                </div>
+                                <div onclick="toggleCheckItem(this)" class="flex items-center justify-between p-3 rounded-xl bg-brand-darkest/60 border border-neutral-800 hover:border-emerald-500/30 cursor-pointer transition-colors">
+                                    <span class="text-xs font-semibold text-neutral-300">Homeowners Insurance Policy Detail</span>
+                                    <i data-lucide="square" class="w-4 h-4 text-neutral-600"></i>
+                                </div>
+                                <div onclick="toggleCheckItem(this)" class="flex items-center justify-between p-3 rounded-xl bg-brand-darkest/60 border border-neutral-800 hover:border-emerald-500/30 cursor-pointer transition-colors">
+                                    <span class="text-xs font-semibold text-neutral-300">Asset Account Statements (60 Days)</span>
+                                    <i data-lucide="square" class="w-4 h-4 text-neutral-600"></i>
+                                </div>
+                            </div>
+                            
+                            <button onclick="openWizard()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-brand-darkest font-extrabold text-xs uppercase tracking-widest py-3.5 rounded-xl transition-all">
+                                Request Compliance Curation
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 4. HOME WARRANTY -->
+        <!-- ============================================== -->
+        <section id="page-warranty" class="page-section hidden">
+            <div class="max-w-7xl mx-auto px-6 py-16 space-y-20">
+                <!-- Custom Hero Banner -->
+                <div class="relative rounded-3xl overflow-hidden min-h-[400px] flex items-center px-8 md:px-12 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1920&q=80')">
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-darkest/95 to-brand-darkest/40 z-10"></div>
+                    <div class="relative z-20 max-w-2xl space-y-4">
+                        <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Whole-Home Protection Curation</span>
+                        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white">Home Infrastructure & Warranty Systems</h1>
+                        <p class="text-neutral-300 text-sm md:text-base leading-relaxed font-light">
+                            Safeguard complex electrical grids, modern hydronic heating, central refrigeration loops, and custom automated home technology configurations from system failures.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Systems Coverage Map -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-5 order-2 lg:order-1">
+                        <div class="glass-panel p-8 rounded-2xl border border-white/5 space-y-6">
+                            <h3 class="text-lg font-bold text-white">System Lifespan Advisory</h3>
+                            <p class="text-xs text-neutral-400">Review median lifespans of modern architectural components below before formulating your service schedule.</p>
+                            
+                            <div class="space-y-4">
+                                <div class="space-y-1">
+                                    <div class="flex justify-between text-xs font-semibold text-neutral-300">
+                                        <span>Central HVAC Units</span>
+                                        <span class="text-emerald-400">12 - 15 Years</span>
+                                    </div>
+                                    <div class="w-full bg-brand-darkest h-2 rounded-full overflow-hidden">
+                                        <div class="bg-emerald-500 h-full w-[80%]"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-1">
+                                    <div class="flex justify-between text-xs font-semibold text-neutral-300">
+                                        <span>Commercial Water Boilers</span>
+                                        <span class="text-emerald-400">10 - 12 Years</span>
+                                    </div>
+                                    <div class="w-full bg-brand-darkest h-2 rounded-full overflow-hidden">
+                                        <div class="bg-emerald-500 h-full w-[65%]"></div>
+                                    </div>
+                                </div>
+                                <div class="space-y-1">
+                                    <div class="flex justify-between text-xs font-semibold text-neutral-300">
+                                        <span>Premium Appliances</span>
+                                        <span class="text-emerald-400">8 - 10 Years</span>
+                                    </div>
+                                    <div class="w-full bg-brand-darkest h-2 rounded-full overflow-hidden">
+                                        <div class="bg-emerald-500 h-full w-[50%]"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 space-y-6 order-1 lg:order-2">
+                        <h2 class="font-serif text-3xl font-bold text-white">Infrastructure Integrity Frameworks</h2>
+                        <p class="text-neutral-300 text-sm leading-relaxed">
+                            When essential mechanical infrastructure degrades, the financial impacts ripple far beyond initial technician fees. WeComplyOffer.com structures detailed compliance resources ensuring elite homeowners configure extended protection protocols that align with verified contractor networks.
+                        </p>
+                        <p class="text-neutral-300 text-sm leading-relaxed">
+                            A highly curated residential warranty package covers major mechanical installations, water infrastructure grids, and gas supplies without the massive cost risk of emergency diagnostic visits.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 5. HOME SECURITY -->
+        <!-- ============================================== -->
+        <section id="page-security" class="page-section hidden">
+            <div class="max-w-7xl mx-auto px-6 py-16 space-y-20">
+                <!-- Custom Hero Banner -->
+                <div class="relative rounded-3xl overflow-hidden min-h-[400px] flex items-center px-8 md:px-12 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=1920&q=80')">
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-darkest/95 to-brand-darkest/40 z-10"></div>
+                    <div class="relative z-20 max-w-2xl space-y-4">
+                        <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Residential Shield Systems</span>
+                        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white">Next-Gen Intelligent Home Security</h1>
+                        <p class="text-neutral-300 text-sm md:text-base leading-relaxed font-light">
+                            Assess dynamic perimeter monitoring, infrared analytical cameras, cellular communication fail-safes, and total automation control to guard your physical environment.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Threat Prevention Tech Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-panel p-8 rounded-2xl border border-white/5 space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                            <i data-lucide="video" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Vision AI Detection</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed">Infuse deep neural analysis networks with exterior high-definition camera grids to eliminate false alarms and detect localized intrusions instantly.</p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl border border-white/5 space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                            <i data-lucide="radio" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Cellular Backup Mesh</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed">Establish persistent multi-band satellite or 5G cellular arrays to guarantee connectivity if primary localized networks face physical sabotage.</p>
+                    </div>
+                    <div class="glass-panel p-8 rounded-2xl border border-white/5 space-y-4">
+                        <div class="w-12 h-12 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                            <i data-lucide="activity" class="w-6 h-6"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white">Integrated Life Safety</h3>
+                        <p class="text-xs text-neutral-400 leading-relaxed">Incorporate specialized ambient sensors for low-ppm carbon monoxide, moisture/flood alerts, and early localized thermal detection elements.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 6. AUTO INSURANCE -->
+        <!-- ============================================== -->
+        <section id="page-auto" class="page-section hidden">
+            <div class="max-w-7xl mx-auto px-6 py-16 space-y-20">
+                <!-- Custom Hero Banner -->
+                <div class="relative rounded-3xl overflow-hidden min-h-[400px] flex items-center px-8 md:px-12 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=1920&q=80')">
+                    <div class="absolute inset-0 bg-gradient-to-r from-brand-darkest/95 to-brand-darkest/40 z-10"></div>
+                    <div class="relative z-20 max-w-2xl space-y-4">
+                        <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Automotive Asset Protection</span>
+                        <h1 class="font-serif text-4xl md:text-5xl font-bold text-white">Prestige Automotive Risk Curation</h1>
+                        <p class="text-neutral-300 text-sm md:text-base leading-relaxed font-light">
+                            Construct exceptional liability defense models, agreed-value coverage pathways, and comprehensive umbrella integration guidelines to safeguard prestigious vehicular portfolios.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Asset Protection Guide -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6">
+                        <h2 class="font-serif text-3xl font-bold text-white">Agreed Value vs. Actual Cash Value</h2>
+                        <p class="text-neutral-300 text-sm leading-relaxed">
+                            For collectors, classic car enthusiasts, and modern performance vehicle owners, standard depreciation formulas present a severe risk of catastrophic capital loss during collision settlements. 
+                        </p>
+                        <p class="text-neutral-300 text-sm leading-relaxed">
+                            WeComplyOffer.com structures high-end auto liability resources detailing advanced liability strategies, OEM-parts restoration clauses, and the exact coordination patterns for personal liability umbrella policies.
+                        </p>
+                    </div>
+
+                    <div class="lg:col-span-5 relative">
+                        <div class="glass-panel p-8 rounded-2xl border border-white/5 space-y-6">
+                            <h3 class="text-lg font-bold text-white">The Premium Garage Audit</h3>
+                            <p class="text-xs text-neutral-400">Essential benchmarks of a robust elite-tier automotive protection blueprint.</p>
+                            
+                            <ul class="space-y-3 text-xs text-neutral-300">
+                                <li class="flex items-center space-x-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                    <span>OEM-specific repair directives included</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                    <span>Comprehensive high-limit uninsured motorist safety layers</span>
+                                </li>
+                                <li class="flex items-center space-x-2">
+                                    <i data-lucide="check-circle" class="w-4 h-4 text-emerald-400"></i>
+                                    <span>Agreed-Value premium appraisals updated annually</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 7. CONSUMER RESOURCE CENTER -->
+        <!-- ============================================== -->
+        <section id="page-resources" class="page-section hidden">
+            <div class="max-w-7xl mx-auto px-6 py-16 space-y-12">
+                <!-- Search and Curation Header -->
+                <div class="text-center max-w-3xl mx-auto space-y-4">
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Interactive Education</span>
+                    <h1 class="font-serif text-4xl md:text-5xl font-bold text-white">Consumer Resource Center</h1>
+                    <p class="text-neutral-400 font-light text-sm md:text-base">Filter dozens of compliance modules, planning guides, and system blueprints created specifically for modern home preservation.</p>
+                </div>
+
+                <!-- Dynamic Real-Time Article Filter Controls -->
+                <div class="flex flex-wrap items-center justify-center gap-4 bg-brand-dark/50 border border-white/5 p-4 rounded-2xl max-w-2xl mx-auto">
+                    <button onclick="filterResources('all')" class="res-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider bg-emerald-500 text-brand-darkest transition-all">All</button>
+                    <button onclick="filterResources('mortgage')" class="res-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white hover:bg-white/5 transition-all">Mortgage</button>
+                    <button onclick="filterResources('warranty')" class="res-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white hover:bg-white/5 transition-all">Warranty</button>
+                    <button onclick="filterResources('security')" class="res-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white hover:bg-white/5 transition-all">Security</button>
+                    <button onclick="filterResources('auto')" class="res-filter-btn px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider text-neutral-400 hover:text-white hover:bg-white/5 transition-all">Auto</button>
+                </div>
+
+                <!-- Live Grid Output -->
+                <div id="resource-cards-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Card 1 -->
+                    <div class="res-card glass-panel rounded-2xl overflow-hidden border border-white/5 hover:border-emerald-500/20 transition-all group flex flex-col justify-between" data-category="mortgage">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="p-6 flex-grow space-y-3">
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-400">Mortgage Guide</span>
+                            <h3 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">The Compliant Refinancing Timeline</h3>
+                            <p class="text-xs text-neutral-400 leading-relaxed">Understanding regulatory requirements, necessary paperwork assemblies, and the historical amortization trends that define premium home refinancing.</p>
+                        </div>
+                        <div class="p-6 border-t border-white/5 pt-4">
+                            <a href="javascript:void(0)" onclick="navigateTo('mortgage')" class="text-xs font-extrabold uppercase text-emerald-400 hover:text-emerald-300 transition-colors flex items-center space-x-1">
+                                <span>Read Comprehensive Module</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="res-card glass-panel rounded-2xl overflow-hidden border border-white/5 hover:border-emerald-500/20 transition-all group flex flex-col justify-between" data-category="warranty">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="p-6 flex-grow space-y-3">
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-400">Warranty Module</span>
+                            <h3 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">HVAC Performance Protection Plans</h3>
+                            <p class="text-xs text-neutral-400 leading-relaxed">How state-of-the-art climate management loops behave over continuous lifecycles and the exact mechanics of system warranties.</p>
+                        </div>
+                        <div class="p-6 border-t border-white/5 pt-4">
+                            <a href="javascript:void(0)" onclick="navigateTo('warranty')" class="text-xs font-extrabold uppercase text-emerald-400 hover:text-emerald-300 transition-colors flex items-center space-x-1">
+                                <span>Read Comprehensive Module</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="res-card glass-panel rounded-2xl overflow-hidden border border-white/5 hover:border-emerald-500/20 transition-all group flex flex-col justify-between" data-category="security">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1558002038-1055907df827?auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="p-6 flex-grow space-y-3">
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-400">Security Curation</span>
+                            <h3 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">Residential Vision AI & Smart Locks</h3>
+                            <p class="text-xs text-neutral-400 leading-relaxed">Evaluating advanced localized camera arrays, automated locks, and cellular fallback systems to build perfect perimeters.</p>
+                        </div>
+                        <div class="p-6 border-t border-white/5 pt-4">
+                            <a href="javascript:void(0)" onclick="navigateTo('security')" class="text-xs font-extrabold uppercase text-emerald-400 hover:text-emerald-300 transition-colors flex items-center space-x-1">
+                                <span>Read Comprehensive Module</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="res-card glass-panel rounded-2xl overflow-hidden border border-white/5 hover:border-emerald-500/20 transition-all group flex flex-col justify-between" data-category="auto">
+                        <div class="h-48 bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="p-6 flex-grow space-y-3">
+                            <span class="text-[10px] uppercase font-bold tracking-widest text-emerald-400">Auto Advisory</span>
+                            <h3 class="text-lg font-bold text-white group-hover:text-emerald-300 transition-colors">Agreed Value Policy Guidelines</h3>
+                            <p class="text-xs text-neutral-400 leading-relaxed">Why exotic collections or premium luxury daily drivers require custom, agreed-valuation profiles rather than standard insurance.</p>
+                        </div>
+                        <div class="p-6 border-t border-white/5 pt-4">
+                            <a href="javascript:void(0)" onclick="navigateTo('auto')" class="text-xs font-extrabold uppercase text-emerald-400 hover:text-emerald-300 transition-colors flex items-center space-x-1">
+                                <span>Read Comprehensive Module</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 8. BLOG INSIGHTS -->
+        <!-- ============================================== -->
+        <section id="page-blog" class="page-section hidden">
+            <div class="max-w-7xl mx-auto px-6 py-16 space-y-12">
+                <div class="text-center max-w-2xl mx-auto space-y-3">
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Industry Intelligence</span>
+                    <h1 class="font-serif text-4xl font-bold text-white">WeComply Insights</h1>
+                    <p class="text-neutral-400 text-sm">Regulatory updates, technological analyses, and compliance trends impacting luxury properties.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                    <div class="glass-panel rounded-3xl overflow-hidden border border-white/5 flex flex-col group hover:border-emerald-500/20 transition-all">
+                        <div class="h-[300px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="p-8 space-y-4 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Compliance Advisory • June 2026</span>
+                                <h3 class="font-serif text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors">The Compliance Paradigm: Consumer Protections in National Networks</h3>
+                                <p class="text-sm text-neutral-300 leading-relaxed">
+                                    Analyzing the fundamental shifts in regulatory enforcement across real estate outreach systems, data integrity protocols, and TCPA audits that protect homeowners from illicit networks.
+                                </p>
+                            </div>
+                            <button onclick="navigateTo('compliance')" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors uppercase tracking-widest flex items-center space-x-2 pt-6 border-t border-white/5 mt-6 w-max">
+                                <span>Learn More</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel rounded-3xl overflow-hidden border border-white/5 flex flex-col group hover:border-emerald-500/20 transition-all">
+                        <div class="h-[300px] bg-cover bg-center" style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80')"></div>
+                        <div class="p-8 space-y-4 flex-grow flex flex-col justify-between">
+                            <div class="space-y-3">
+                                <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Smart Curation • June 2026</span>
+                                <h3 class="font-serif text-2xl font-bold text-white group-hover:text-emerald-300 transition-colors">Whole-Home Mechanical Lifecycles: Protecting Investment Foundations</h3>
+                                <p class="text-sm text-neutral-300 leading-relaxed">
+                                    How early degradation in electrical grids or central heating installations triggers structural collateral vulnerabilities, and how to verify compliance within national service providers.
+                                </p>
+                            </div>
+                            <button onclick="navigateTo('warranty')" class="text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors uppercase tracking-widest flex items-center space-x-2 pt-6 border-t border-white/5 mt-6 w-max">
+                                <span>Learn More</span>
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 9. SUCCESS STORIES -->
+        <!-- ============================================== -->
+        <section id="page-success" class="page-section hidden">
+            <div class="max-w-7xl mx-auto px-6 py-16 space-y-20">
+                <div class="text-center max-w-2xl mx-auto space-y-3">
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Proven Milestones</span>
+                    <h1 class="font-serif text-4xl font-bold text-white">Advisory Success Stories</h1>
+                    <p class="text-neutral-400 text-sm">How modern estates managed core household compliance milestones via WeComplyOffer guides.</p>
+                </div>
+
+                <div class="space-y-12">
+                    <div class="glass-panel p-8 md:p-12 rounded-3xl border border-white/5 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-4 h-64 bg-cover bg-center rounded-2xl" style="background-image: url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="lg:col-span-8 space-y-4">
+                            <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Case Study #029 • Seattle Estate Curation</span>
+                            <h3 class="font-serif text-2xl font-bold text-white">Securing HVAC Compliance for 12,000 sq.ft. Multi-Tier Villa</h3>
+                            <p class="text-sm text-neutral-300 leading-relaxed">
+                                A high-performance mechanical climate array suffered structural degradation within 6 years of configuration. Leveraging our Home Warranty Educational frameworks, the resident navigated specific service provider protocols without facing predatory contractor evaluations.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="glass-panel p-8 md:p-12 rounded-3xl border border-white/5 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                        <div class="lg:col-span-4 h-64 bg-cover bg-center rounded-2xl" style="background-image: url('https://images.unsplash.com/photo-1617814076367-b759c7d7e738?auto=format&fit=crop&w=600&q=80')"></div>
+                        <div class="lg:col-span-8 space-y-4">
+                            <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest">Case Study #044 • Premium Auto Preservation</span>
+                            <h3 class="font-serif text-2xl font-bold text-white">Agreed-Value Restructuring for high-limit automotive gallery</h3>
+                            <p class="text-sm text-neutral-300 leading-relaxed">
+                                An avid performance vehicle enthusiast configured a multi-car liability portfolio. Standard actual-cash-value setups threatened multi-million dollar asset losses on specialized vehicles. Utilizing our Agreed Value educational timeline, the asset manager structured unified policy updates cleanly.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 10. FAQ SECTION -->
+        <!-- ============================================== -->
+        <section id="page-faq" class="page-section hidden">
+            <div class="max-w-4xl mx-auto px-6 py-16 space-y-12">
+                <div class="text-center space-y-3">
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Inquiries Answered</span>
+                    <h1 class="font-serif text-4xl font-bold text-white">Compliance & Curation FAQ</h1>
+                    <p class="text-neutral-400 text-sm">Review detailed, transparent responses regarding our educational resources, state filters, and non-pricing philosophy.</p>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- FAQ Item 1 -->
+                    <div class="glass-panel rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-6 text-left">
+                            <span class="text-sm font-semibold text-white">Does WeComplyOffer.com sell consumer leads?</span>
+                            <i data-lucide="plus" class="w-4 h-4 text-emerald-400 transform transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-xs text-neutral-400 leading-relaxed">
+                            No. WeComplyOffer.com is an independent educational and consumer advisory platform. Our goal is to curate verified resources, regulatory checklists, and provider discovery methodologies. We strictly comply with state and federal privacy acts regarding lead control.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div class="glass-panel rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-6 text-left">
+                            <span class="text-sm font-semibold text-white">Why are there no pricing rates or monthly payment charts?</span>
+                            <i data-lucide="plus" class="w-4 h-4 text-emerald-400 transform transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-xs text-neutral-400 leading-relaxed">
+                            Under our regulatory alignment mandate, we do not present pricing tables or rates. Since customized protections (mortgage, warranty, auto, security) depend strictly on geographical, asset, and compliance variables, displaying generalized prices is often misleading. We promote precision over projection.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div class="glass-panel rounded-2xl overflow-hidden border border-white/5">
+                        <button onclick="toggleFAQ(this)" class="w-full flex items-center justify-between p-6 text-left">
+                            <span class="text-sm font-semibold text-white">How does the geographic curation tool operate?</span>
+                            <i data-lucide="plus" class="w-4 h-4 text-emerald-400 transform transition-transform duration-200"></i>
+                        </button>
+                        <div class="faq-content hidden px-6 pb-6 text-xs text-neutral-400 leading-relaxed">
+                            WeComplyOffer utilizes regional risk maps and regional mortgage frameworks to organize dynamic checklists. By selecting your localized parameters, our educational algorithms deliver precise guides regarding regional licensing and federal program eligibilities.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 11. CONTACT US -->
+        <!-- ============================================== -->
+        <section id="page-contact" class="page-section hidden">
+            <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 lg:grid-cols-12 gap-12">
+                <div class="lg:col-span-5 space-y-6">
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Secure Support desk</span>
+                    <h1 class="font-serif text-4xl font-bold text-white">Engage With Our Advisory Office</h1>
+                    <p class="text-neutral-300 text-sm leading-relaxed">
+                        Have precise compliance concerns or require data opt-out support under our consumer bill of rights? Contact our security desks directly. We operate inside premium encrypted channels.
+                    </p>
+                    
+                    <div class="space-y-4 pt-6 border-t border-white/5">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-emerald-400"></i>
+                            <span class="text-sm text-neutral-400">100 Wall Street, Executive Suite, New York, NY 10005</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="mail" class="w-5 h-5 text-emerald-400"></i>
+                            <span class="text-sm text-neutral-400">support@wecomplyoffer.com</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7">
+                    <div class="glass-panel p-8 rounded-3xl border border-white/5">
+                        <h3 class="text-lg font-bold text-white mb-6">Send An Encrypted Curation Message</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <input type="text" id="contact-name" placeholder="Full Name" class="bg-brand-darkest/80 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 text-neutral-200">
+                                <input type="email" id="contact-email" placeholder="E-mail Address" class="bg-brand-darkest/80 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 text-neutral-200">
+                            </div>
+                            <input type="text" id="contact-subject" placeholder="Compliance Subject Focus" class="w-full bg-brand-darkest/80 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 text-neutral-200">
+                            <textarea id="contact-msg" placeholder="Describe your resource or inquiry parameters..." rows="5" class="w-full bg-brand-darkest/80 border border-neutral-800 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-500 text-neutral-200"></textarea>
+                            
+                            <button onclick="submitContact()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-brand-darkest font-extrabold text-sm uppercase tracking-widest py-4 rounded-xl transition-all">
+                                Establish Contact Route
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 12. COMPLIANCE CENTER -->
+        <!-- ============================================== -->
+        <section id="page-compliance" class="page-section hidden">
+            <div class="max-w-5xl mx-auto px-6 py-16 space-y-12">
+                <div class="text-center space-y-3">
+                    <span class="text-emerald-400 text-xs font-bold uppercase tracking-[0.25em]">Audit and Oversight</span>
+                    <h1 class="font-serif text-4xl font-bold text-white">WeComply Assurance Program</h1>
+                    <p class="text-neutral-400 text-sm">Review the legal parameters, regulatory alignments, and user privacy foundations protecting consumer data.</p>
+                </div>
+
+                <div class="glass-panel p-8 rounded-3xl border border-white/5 space-y-6">
+                    <h3 class="text-xl font-serif text-white flex items-center space-x-2">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-emerald-400"></i>
+                        <span>Consumer Protection & Legal Bill of Rights</span>
+                    </h3>
+                    
+                    <p class="text-sm text-neutral-300 leading-relaxed">
+                        WeComplyOffer.com maintains an absolute pledge to the standards detailed in the FTC Safeguards Rule and the Gramm-Leach-Bliley Act (GLBA). Under our regulatory oversight protocols:
+                    </p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+                        <div class="p-5 rounded-2xl bg-brand-darkest/60 border border-neutral-800">
+                            <h4 class="text-sm font-bold text-white flex items-center space-x-2">
+                                <i data-lucide="eye-off" class="w-4 h-4 text-emerald-400"></i>
+                                <span>Zero Robocall Tolerance</span>
+                            </h4>
+                            <p class="text-xs text-neutral-400 mt-2">No consumer metrics filtered through our system are exposed to aggressive outbound cold calling or unverified robocalls.</p>
+                        </div>
+
+                        <div class="p-5 rounded-2xl bg-brand-darkest/60 border border-neutral-800">
+                            <h4 class="text-sm font-bold text-white flex items-center space-x-2">
+                                <i data-lucide="key-round" class="w-4 h-4 text-emerald-400"></i>
+                                <span>Encrypted Transmission</span>
+                            </h4>
+                            <p class="text-xs text-neutral-400 mt-2">Every checklist validation and eligibility intake operates under 256-bit secure sockets layer protocols.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Opt Out Request Form -->
+                <div class="glass-panel p-8 rounded-3xl border border-white/5 space-y-6">
+                    <h3 class="text-lg font-bold text-white">Data Opt-Out Desk (Do Not Sell My Info)</h3>
+                    <p class="text-xs text-neutral-400">Under California Consumer Privacy Act (CCPA) guidelines, you have the absolute right to limit the storage of your residential variables. Complete the security fields below to initiate complete removal of your credentials.</p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <input type="text" id="opt-name" placeholder="Full Name" class="bg-brand-darkest border border-neutral-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-emerald-500 text-neutral-200">
+                        <input type="email" id="opt-email" placeholder="E-mail" class="bg-brand-darkest border border-neutral-800 rounded-xl px-4 py-3 text-xs focus:outline-none focus:border-emerald-500 text-neutral-200">
+                        <button onclick="submitOptOut()" class="bg-emerald-500 hover:bg-emerald-400 text-brand-darkest text-xs font-bold uppercase tracking-wider py-3 rounded-xl transition-all">Submit Removal Query</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 13. LEGAL PAGES (PRIVACY, TERMS, DISCLAIMER, COOKIE) -->
+        <!-- ============================================== -->
+        <section id="page-privacy" class="page-section hidden">
+            <div class="max-w-4xl mx-auto px-6 py-16 space-y-6">
+                <h1 class="font-serif text-3xl font-bold text-white">Privacy Policy</h1>
+                <p class="text-xs text-neutral-400">Effective Date: June 15, 2026</p>
+                <div class="text-sm text-neutral-300 space-y-4 leading-relaxed">
+                    <p>WeComplyOffer.com, hereinafter referred to as "the Portal," values the secure sovereign control of your personal data details. This document maps how we manage, protect, and process informational items assembled during your consumer navigation.</p>
+                    <h3 class="text-white font-bold text-base mt-6">1. Information Accumulation Parameters</h3>
+                    <p>We compile details you provide during interactive forms (e.g., zip codes, home ownership targets). No personal bank passwords, complete social security indicators, or mortgage rates are tracked directly on this system.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-terms" class="page-section hidden">
+            <div class="max-w-4xl mx-auto px-6 py-16 space-y-6">
+                <h1 class="font-serif text-3xl font-bold text-white">Terms & Conditions</h1>
+                <p class="text-xs text-neutral-400">Effective Date: June 15, 2026</p>
+                <div class="text-sm text-neutral-300 space-y-4 leading-relaxed">
+                    <p>By entering and navigating WeComplyOffer.com, you agree to comply with the terms detailed here. All information blocks, articles, and checklists are designed exclusively for consumer education.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-disclaimer" class="page-section hidden">
+            <div class="max-w-4xl mx-auto px-6 py-16 space-y-6">
+                <h1 class="font-serif text-3xl font-bold text-white">Legal Disclaimer</h1>
+                <div class="text-sm text-neutral-300 space-y-4 leading-relaxed">
+                    <p>WeComplyOffer.com is not an active financial banking organization, a licensed real estate financing brokerage, or a direct home warranty service provider. We do not negotiate directly with loan programs or insurance agencies on your behalf. All materials provided serve exclusively as curated educational checkpoints.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="page-cookie" class="page-section hidden">
+            <div class="max-w-4xl mx-auto px-6 py-16 space-y-6">
+                <h1 class="font-serif text-3xl font-bold text-white">Cookie Policy</h1>
+                <div class="text-sm text-neutral-300 space-y-4 leading-relaxed">
+                    <p>We utilize essential functional cookies to keep track of your active interactive wizard targets, preference maps, and geographical zip codes to ensure smooth programmatic delivery across our application panels.</p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ============================================== -->
+        <!-- 14. SITEMAP -->
+        <!-- ============================================== -->
+        <section id="page-sitemap" class="page-section hidden">
+            <div class="max-w-4xl mx-auto px-6 py-16 space-y-12">
+                <div class="text-center space-y-3">
+                    <h1 class="font-serif text-4xl font-bold text-white">Portal Index</h1>
+                    <p class="text-neutral-400 text-sm">Full semantic map of WeComplyOffer.com sections.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="glass-panel p-6 rounded-2xl border border-white/5 space-y-3">
+                        <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-widest">Main Destinations</h3>
+                        <ul class="space-y-2 text-xs text-neutral-300">
+                            <li><a href="javascript:void(0)" onclick="navigateTo('home')" class="hover:text-emerald-400 transition-colors">Home Portal</a></li>
+                            <li><a href="javascript:void(0)" onclick="navigateTo('about')" class="hover:text-emerald-400 transition-colors">About Us</a></li>
+                            <li><a href="javascript:void(0)" onclick="navigateTo('resources')" class="hover:text-emerald-400 transition-colors">Resource Hub</a></li>
+                            <li><a href="javascript:void(0)" onclick="navigateTo('blog')" class="hover:text-emerald-400 transition-colors">Insights Blog</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border border-white/5 space-y-3">
+                        <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-widest">Solutions Focus</h3>
+                        <ul class="space-y-2 text-xs text-neutral-300">
+                            <li><a href="javascript:void(0)" onclick="navigateTo('mortgage')" class="hover:text-emerald-400 transition-colors">Mortgage Advisory</a></li>
+                            <li><a href="javascript:void(0)" onclick="navigateTo('warranty')" class="hover:text-emerald-400 transition-colors">Home Warranty</a></li>
+                            <li><a href="javascript:void(0)" onclick="navigateTo('security')" class="hover:text-emerald-400 transition-colors">Home Security Systems</a></li>
+                            <li><a href="javascript:void(0)" onclick="navigateTo('auto')" class="hover:text-emerald-400 transition-colors">Auto Risk Advisory</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="glass-panel p-6 rounded-2xl border border-white/5 space-y-3">
+                        <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-widest">Legislation & Compliance</h3>
+                        <ul class="space-y-2 text-xs text-neutral-300">
+                            <li><a href="javascript:void(0)" onclick="navigateTo('compliance')" class="hover:text-emerald-400 transition-colors">Compliance Hub</a></li>
+                            <li><a href="javascript:void(0)" onclick="navigateTo('privacy')" class="hover:text-emerald-400 transition-colors">Privacy Shield</a></li>
+                            <li><a href="javascript:void(0)" onclick="navigateTo('terms')" class="hover:text-emerald-400 transition-colors">Terms of Entry</a></li>
+                            <li><a href="javascript:void(0)" onclick="navigateTo('disclaimer')" class="hover:text-emerald-400 transition-colors">Disclaimer Information</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- ELIGIBILITY WIZARD MODAL (INTERACTIVE MULTI-STEP DIALOG) -->
+    <div id="eligibility-modal" class="fixed inset-0 z-[80] hidden flex items-center justify-center p-4">
+        <!-- Backdrop blur overlay -->
+        <div onclick="closeWizard()" class="absolute inset-0 bg-brand-darkest/90 backdrop-blur-md"></div>
+        
+        <!-- Modal Card Container -->
+        <div class="relative bg-neutral-900 border border-white/10 rounded-3xl w-full max-w-xl p-8 shadow-2xl z-10 overflow-hidden">
+            <!-- Background gradient flare -->
+            <div class="absolute -right-16 -top-16 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl"></div>
+            
+            <button onclick="closeWizard()" class="absolute top-4 right-4 text-neutral-400 hover:text-white transition-colors">
+                <i data-lucide="x" class="w-6 h-6"></i>
+            </button>
+
+            <!-- Progress Bar -->
+            <div class="w-full h-1 bg-brand-darkest rounded-full mb-8 overflow-hidden">
+                <div id="wizard-progress" class="h-full bg-emerald-500 transition-all duration-300" style="width: 20%;"></div>
+            </div>
+
+            <!-- Step 1: Program Focus -->
+            <div id="wiz-step-1" class="space-y-6">
+                <div class="text-center space-y-2">
+                    <h3 class="text-2xl font-serif text-white font-bold">What category require audit assistance?</h3>
+                    <p class="text-xs text-neutral-400">Your selection filters the appropriate compliance timeline modules.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <button onclick="selectWizardGoal('mortgage')" class="wiz-select-btn p-4 rounded-xl border border-neutral-800 hover:border-emerald-500/50 bg-brand-darkest/60 hover:bg-emerald-500/5 transition-all text-left flex items-start space-x-3">
+                        <i data-lucide="home" class="w-5 h-5 text-emerald-400 mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white text-sm">Mortgage Resource</p>
+                            <p class="text-[10px] text-neutral-500 mt-1">Refinancing blueprints</p>
+                        </div>
+                    </button>
+                    <button onclick="selectWizardGoal('warranty')" class="wiz-select-btn p-4 rounded-xl border border-neutral-800 hover:border-emerald-500/50 bg-brand-darkest/60 hover:bg-emerald-500/5 transition-all text-left flex items-start space-x-3">
+                        <i data-lucide="shield-alert" class="w-5 h-5 text-emerald-400 mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white text-sm">Home Warranty</p>
+                            <p class="text-[10px] text-neutral-500 mt-1">Infrastructure protection</p>
+                        </div>
+                    </button>
+                    <button onclick="selectWizardGoal('security')" class="wiz-select-btn p-4 rounded-xl border border-neutral-800 hover:border-emerald-500/50 bg-brand-darkest/60 hover:bg-emerald-500/5 transition-all text-left flex items-start space-x-3">
+                        <i data-lucide="activity" class="w-5 h-5 text-emerald-400 mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white text-sm">Residential Security</p>
+                            <p class="text-[10px] text-neutral-500 mt-1">Smart tech audits</p>
+                        </div>
+                    </button>
+                    <button onclick="selectWizardGoal('auto')" class="wiz-select-btn p-4 rounded-xl border border-neutral-800 hover:border-emerald-500/50 bg-brand-darkest/60 hover:bg-emerald-500/5 transition-all text-left flex items-start space-x-3">
+                        <i data-lucide="car" class="w-5 h-5 text-emerald-400 mt-1"></i>
+                        <div>
+                            <p class="font-semibold text-white text-sm">Auto Security</p>
+                            <p class="text-[10px] text-neutral-500 mt-1">Asset protection profiles</p>
+                        </div>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Step 2: Ownership Status -->
+            <div id="wiz-step-2" class="hidden space-y-6">
+                <div class="text-center space-y-2">
+                    <h3 class="text-2xl font-serif text-white font-bold">What is your home ownership profile?</h3>
+                    <p class="text-xs text-neutral-400">Helps check exact regulatory state constraints.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <button onclick="selectWizardOwnership('own')" class="p-5 rounded-2xl border border-neutral-800 hover:border-emerald-500/50 bg-brand-darkest/60 hover:bg-emerald-500/5 transition-all text-center">
+                        <p class="font-bold text-white text-sm">I own my residence</p>
+                    </button>
+                    <button onclick="selectWizardOwnership('buying')" class="p-5 rounded-2xl border border-neutral-800 hover:border-emerald-500/50 bg-brand-darkest/60 hover:bg-emerald-500/5 transition-all text-center">
+                        <p class="font-bold text-white text-sm">I am actively shopping</p>
+                    </button>
+                </div>
+                <div class="flex justify-between pt-4 border-t border-neutral-800">
+                    <button onclick="prevWizardStep(1)" class="text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">Go Back</button>
+                </div>
+            </div>
+
+            <!-- Step 3: Geographic Parameter -->
+            <div id="wiz-step-3" class="hidden space-y-6">
+                <div class="text-center space-y-2">
+                    <h3 class="text-2xl font-serif text-white font-bold">Enter state parameter zip code</h3>
+                    <p class="text-xs text-neutral-400">Validates compliance grids on state programs.</p>
+                </div>
+                <div class="space-y-4">
+                    <input type="text" id="wiz-zip" placeholder="U.S. Zip Code" class="w-full bg-brand-darkest border border-neutral-800 rounded-xl px-4 py-4 text-sm text-center font-bold tracking-widest text-white focus:outline-none focus:border-emerald-500">
+                    <button onclick="nextWizardStep(4)" class="w-full bg-emerald-500 hover:bg-emerald-400 text-brand-darkest font-extrabold text-sm uppercase tracking-widest py-4 rounded-xl transition-all">
+                        Proceed
+                    </button>
+                </div>
+                <div class="flex justify-between pt-4 border-t border-neutral-800">
+                    <button onclick="prevWizardStep(2)" class="text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">Go Back</button>
+                </div>
+            </div>
+
+            <!-- Step 4: Verification Destination -->
+            <div id="wiz-step-4" class="hidden space-y-6">
+                <div class="text-center space-y-2">
+                    <h3 class="text-2xl font-serif text-white font-bold">Where should we deliver your compliance verification guidelines?</h3>
+                    <p class="text-xs text-neutral-400">SSL Encrypted delivery channels.</p>
+                </div>
+                <div class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <input type="text" id="wiz-name" placeholder="Full Name" class="bg-brand-darkest border border-neutral-800 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-emerald-500 text-white">
+                        <input type="email" id="wiz-email" placeholder="E-mail Address" class="bg-brand-darkest border border-neutral-800 rounded-xl px-4 py-3.5 text-sm focus:outline-none focus:border-emerald-500 text-white">
+                    </div>
+                    <button onclick="submitWizard()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-brand-darkest font-extrabold text-sm uppercase tracking-widest py-4 rounded-xl transition-all shadow-lg hover:shadow-emerald-500/20 transform hover:-translate-y-0.5">
+                        Compile Advisory Blueprint
+                    </button>
+                </div>
+                <div class="flex justify-between pt-4 border-t border-neutral-800">
+                    <button onclick="prevWizardStep(3)" class="text-xs font-bold uppercase tracking-widest text-neutral-400 hover:text-white transition-colors">Go Back</button>
+                </div>
+            </div>
+
+            <!-- Step 5: Success Verification Dashboard -->
+            <div id="wiz-success" class="hidden text-center py-12 space-y-6">
+                <div class="w-20 h-20 bg-emerald-500/10 rounded-full flex items-center justify-center text-emerald-400 mx-auto border border-emerald-500/20">
+                    <i data-lucide="shield-check" class="w-12 h-12"></i>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="text-3xl font-serif text-white font-bold">Verification Cleared</h4>
+                    <p class="text-sm text-neutral-400">Your profile meets the parameters of the national education directory under regulatory oversight tag <span class="text-emerald-400 font-mono font-bold" id="wiz-seal">#WCO-88392</span>.</p>
+                </div>
+                <button onclick="closeWizard()" class="px-8 py-3 bg-neutral-800 hover:bg-neutral-700 text-white text-xs font-bold uppercase tracking-widest rounded-xl transition-colors">
+                    Close Desk
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- PORTAL NOTIFICATION POPUP -->
+    <div id="toast" class="fixed bottom-6 right-6 z-[90] transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none">
+        <div class="glass-panel p-4 rounded-xl border border-emerald-500/20 flex items-center space-x-3 shadow-2xl">
+            <div class="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-400">
+                <i data-lucide="info" class="w-5 h-5"></i>
+            </div>
+            <div>
+                <p id="toast-msg" class="text-xs font-semibold text-white"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- EXTRAVAGANT FOOTER -->
+    <footer class="bg-brand-darkest border-t border-white/5 pt-20 pb-10 relative overflow-hidden z-20">
+        <!-- Floating decorative line -->
+        <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 pb-16">
+            <!-- Brand Column -->
+            <div class="space-y-6 lg:col-span-2">
+                <a href="javascript:void(0)" onclick="navigateTo('home')" class="flex items-center space-x-3 group">
+                    <div class="bg-gradient-to-tr from-emerald-600 to-emerald-400 p-2 rounded-lg shadow-lg">
+                        <i data-lucide="shield-check" class="w-6 h-6 text-brand-darkest"></i>
+                    </div>
+                    <span class="font-serif text-xl tracking-wider text-white font-bold">WeComply<span class="text-emerald-400 font-sans font-extrabold">Offer</span></span>
+                </a>
+                <p class="text-xs text-neutral-400 leading-relaxed max-w-sm">
+                    Educating and shielding consumer variables across the United States. Aligning system warranty planning, home intelligence networks, and auto asset protection under strict regulatory guidelines.
+                </p>
+                <div class="flex items-center space-x-4">
+                    <a href="javascript:void(0)" class="text-neutral-500 hover:text-white transition-colors"><i data-lucide="facebook" class="w-5 h-5"></i></a>
+                    <a href="javascript:void(0)" class="text-neutral-500 hover:text-white transition-colors"><i data-lucide="twitter" class="w-5 h-5"></i></a>
+                    <a href="javascript:void(0)" class="text-neutral-500 hover:text-white transition-colors"><i data-lucide="linkedin" class="w-5 h-5"></i></a>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="space-y-4">
+                <h4 class="text-xs uppercase tracking-widest text-emerald-400 font-extrabold">Primary Portals</h4>
+                <ul class="space-y-2.5 text-xs text-neutral-400 font-medium">
+                    <li><a href="javascript:void(0)" onclick="navigateTo('mortgage')" class="hover:text-white transition-colors">Mortgage Strategy</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('warranty')" class="hover:text-white transition-colors">Home Warranty</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('security')" class="hover:text-white transition-colors">Smart Security Systems</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('auto')" class="hover:text-white transition-colors">Auto Risk Protection</a></li>
+                </ul>
+            </div>
+
+            <!-- Education / Resources -->
+            <div class="space-y-4">
+                <h4 class="text-xs uppercase tracking-widest text-emerald-400 font-extrabold">Resource Desk</h4>
+                <ul class="space-y-2.5 text-xs text-neutral-400 font-medium">
+                    <li><a href="javascript:void(0)" onclick="navigateTo('resources')" class="hover:text-white transition-colors">Interactive Curation</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('blog')" class="hover:text-white transition-colors">Insights Blog</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('success')" class="hover:text-white transition-colors">Certified Success Stories</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('faq')" class="hover:text-white transition-colors">Assistance FAQ</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('sitemap')" class="hover:text-white transition-colors">Portal Sitemap</a></li>
+                </ul>
+            </div>
+
+            <!-- Regulatory Desk -->
+            <div class="space-y-4">
+                <h4 class="text-xs uppercase tracking-widest text-emerald-400 font-extrabold">Oversight Desk</h4>
+                <ul class="space-y-2.5 text-xs text-neutral-400 font-medium">
+                    <li><a href="javascript:void(0)" onclick="navigateTo('compliance')" class="hover:text-white transition-colors">Compliance Shield</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('privacy')" class="hover:text-white transition-colors">Privacy Shield</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('terms')" class="hover:text-white transition-colors">Terms of Entry</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('disclaimer')" class="hover:text-white transition-colors">Legal Disclaimer</a></li>
+                    <li><a href="javascript:void(0)" onclick="navigateTo('cookie')" class="hover:text-white transition-colors">Cookie Tracking Policy</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 border-t border-white/5 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-[10px] text-neutral-500 leading-normal text-center md:text-left">
+                © 2026 WeComplyOffer.com. All sovereign trademarks strictly reserved. We strictly align with GLBA, FCRA, CCPA guidelines.
+            </p>
+            <div class="flex items-center space-x-2 text-[10px] text-neutral-500">
+                <i data-lucide="lock" class="w-3.5 h-3.5 text-emerald-400"></i>
+                <span>SSL Encrypted Active Safe Core</span>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- ============================================== -->
+    <!-- INTERACTIVE JAVASCRIPT LOGIC -->
+    <!-- ============================================== -->
+    <script>
+        // Preloader Complete Transition
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                const loader = document.getElementById('preloader');
+                loader.classList.add('opacity-0', 'pointer-events-none');
+                setTimeout(() => {
+                    loader.style.display = 'none';
+                }, 1000);
+            }, 1800);
+            
+            // Initialise Lucide Icons
+            lucide.createIcons();
+            
+            // Start slideshow
+            startSlideshow();
+        });
+
+        // SPA Navigation / Tab Routing System
+        function navigateTo(pageId) {
+            // Hide all pages
+            const sections = document.querySelectorAll('.page-section');
+            sections.forEach(sec => sec.classList.add('hidden'));
+            
+            // Show requested page
+            const targetSection = document.getElementById('page-' + pageId);
+            if (targetSection) {
+                targetSection.classList.remove('hidden');
+                // Auto scroll to top seamlessly
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+                showToast(`Loaded ${pageId.charAt(0).toUpperCase() + pageId.slice(1)} Dashboard`);
+            }
+            
+            // Re-render icons on potential content replacements
+            lucide.createIcons();
+        }
+
+        // Hero Slideshow Routine
+        let currentSlide = 0;
+        const slides = document.getElementById('hero-slides')?.children;
+        function startSlideshow() {
+            if (!slides || slides.length === 0) return;
+            setInterval(() => {
+                slides[currentSlide].classList.add('opacity-0');
+                slides[currentSlide].classList.remove('opacity-100');
+                
+                currentSlide = (currentSlide + 1) % slides.length;
+                
+                slides[currentSlide].classList.remove('opacity-0');
+                slides[currentSlide].classList.add('opacity-100');
+            }, 5000);
+        }
+
+        // Mobile Menu Toggling
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        function toggleMobileMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // FAQ Collapse Action
+        function toggleFAQ(button) {
+            const content = button.nextElementSibling;
+            const icon = button.querySelector('i');
+            
+            content.classList.toggle('hidden');
+            if (content.classList.contains('hidden')) {
+                icon.setAttribute('data-lucide', 'plus');
+            } else {
+                icon.setAttribute('data-lucide', 'minus');
+            }
+            lucide.createIcons();
+        }
+
+        // Document Checkboxes simulation
+        function toggleCheckItem(element) {
+            const icon = element.querySelector('i');
+            const isChecked = icon.getAttribute('data-lucide') === 'check-square';
+            
+            if (isChecked) {
+                icon.setAttribute('data-lucide', 'square');
+                icon.classList.remove('text-emerald-400');
+                icon.classList.add('text-neutral-600');
+            } else {
+                icon.setAttribute('data-lucide', 'check-square');
+                icon.classList.remove('text-neutral-600');
+                icon.classList.add('text-emerald-400');
+            }
+            lucide.createIcons();
+        }
+
+        // Real-Time Curation Filter for Blog/Resource Hub
+        function filterResources(category) {
+            const cards = document.querySelectorAll('.res-card');
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+
+            // Highlight active filter button
+            const buttons = document.querySelectorAll('.res-filter-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-emerald-500', 'text-brand-darkest');
+                btn.classList.add('text-neutral-400', 'hover:text-white', 'hover:bg-white/5');
+            });
+            event.target.classList.add('bg-emerald-500', 'text-brand-darkest');
+            event.target.classList.remove('text-neutral-400', 'hover:text-white', 'hover:bg-white/5');
+        }
+
+        // MATCH WRITER ADVISORY TOOL STATE MACHINE
+        let matcherData = { goal: '', scope: '', name: '', email: '' };
+        function setMatcherGoal(goal) {
+            matcherData.goal = goal;
+            document.getElementById('matcher-step-1').classList.add('hidden');
+            document.getElementById('matcher-step-2').classList.remove('hidden');
+        }
+        function setMatcherScope(scope) {
+            matcherData.scope = scope;
+            document.getElementById('matcher-step-2').classList.add('hidden');
+            document.getElementById('matcher-step-3').classList.remove('hidden');
+        }
+        function prevMatcherStep(step) {
+            document.getElementById('matcher-step-2').classList.add('hidden');
+            document.getElementById('matcher-step-3').classList.add('hidden');
+            document.getElementById('matcher-step-' + step).classList.remove('hidden');
+        }
+        function submitMatcher() {
+            const name = document.getElementById('matcher-name').value;
+            const email = document.getElementById('matcher-email').value;
+            if(!name || !email) {
+                showToast("Ensure verification contact items are provided.");
+                return;
+            }
+            matcherData.name = name;
+            matcherData.email = email;
+            
+            document.getElementById('matcher-step-3').classList.add('hidden');
+            document.getElementById('matcher-success').classList.remove('hidden');
+            document.getElementById('matcher-seal').innerText = "#WCO-" + Math.floor(Math.random() * 900000 + 100000);
+            showToast("Educational Curriculum Configured Cleanly");
+        }
+        function resetMatcher() {
+            matcherData = { goal: '', scope: '', name: '', email: '' };
+            document.getElementById('matcher-name').value = '';
+            document.getElementById('matcher-email').value = '';
+            document.getElementById('matcher-success').classList.add('hidden');
+            document.getElementById('matcher-step-1').classList.remove('hidden');
+        }
+
+        // ELIGIBILITY WIZARD DIALOG FUNCTIONS
+        let wizardStep = 1;
+        let wizardData = { category: '', ownership: '', zip: '', name: '', email: '' };
+        
+        function openWizard() {
+            document.getElementById('eligibility-modal').classList.remove('hidden');
+            resetWizard();
+        }
+        function closeWizard() {
+            document.getElementById('eligibility-modal').classList.add('hidden');
+        }
+        function resetWizard() {
+            wizardStep = 1;
+            updateWizardUI();
+            document.getElementById('wiz-zip').value = '';
+            document.getElementById('wiz-name').value = '';
+            document.getElementById('wiz-email').value = '';
+        }
+        function selectWizardGoal(goal) {
+            wizardData.category = goal;
+            nextWizardStep(2);
+        }
+        function selectWizardOwnership(profile) {
+            wizardData.ownership = profile;
+            nextWizardStep(3);
+        }
+        function prevWizardStep(step) {
+            wizardStep = step;
+            updateWizardUI();
+        }
+        function nextWizardStep(step) {
+            if (wizardStep === 3) {
+                const zipVal = document.getElementById('wiz-zip').value;
+                if (!zipVal || zipVal.length < 5) {
+                    showToast("Please enter a valid geographic parameters zip code.");
+                    return;
+                }
+                wizardData.zip = zipVal;
+            }
+            wizardStep = step;
+            updateWizardUI();
+        }
+        function updateWizardUI() {
+            // Hide all steps
+            for (let i = 1; i <= 4; i++) {
+                document.getElementById('wiz-step-' + i).classList.add('hidden');
+            }
+            document.getElementById('wiz-success').classList.add('hidden');
+            
+            // Show active step
+            if (wizardStep === 5) {
+                document.getElementById('wiz-success').classList.remove('hidden');
+                document.getElementById('wizard-progress').style.width = '100%';
+            } else {
+                document.getElementById('wiz-step-' + wizardStep).classList.remove('hidden');
+                document.getElementById('wizard-progress').style.width = (wizardStep * 25) + '%';
+            }
+        }
+        function submitWizard() {
+            const name = document.getElementById('wiz-name').value;
+            const email = document.getElementById('wiz-email').value;
+            if(!name || !email) {
+                showToast("Name and email descriptors must be recorded.");
+                return;
+            }
+            wizardData.name = name;
+            wizardData.email = email;
+            
+            document.getElementById('wiz-seal').innerText = "#WCO-" + Math.floor(Math.random() * 800000 + 200000);
+            wizardStep = 5;
+            updateWizardUI();
+            showToast("Eligibility Profile Secured & Verified");
+        }
+
+        // HERO FORM TRIGGERS
+        let heroOwnerStatusSelected = 'own';
+        function selectHeroOwnerStatus(status) {
+            heroOwnerStatusSelected = status;
+            const btnOwn = document.getElementById('btn-hero-own');
+            const btnBuy = document.getElementById('btn-hero-buy');
+            
+            if (status === 'own') {
+                btnOwn.className = "border border-emerald-500/40 bg-emerald-500/10 text-white text-xs font-bold py-3 rounded-xl transition-all";
+                btnBuy.className = "border border-neutral-800 bg-neutral-900/40 text-neutral-400 hover:text-white text-xs font-bold py-3 rounded-xl transition-all";
+            } else {
+                btnOwn.className = "border border-neutral-800 bg-neutral-900/40 text-neutral-400 hover:text-white text-xs font-bold py-3 rounded-xl transition-all";
+                btnBuy.className = "border border-emerald-500/40 bg-emerald-500/10 text-white text-xs font-bold py-3 rounded-xl transition-all";
+            }
+        }
+        function triggerHeroForm() {
+            const category = document.getElementById('hero-select-category').value;
+            const zip = document.getElementById('hero-zip').value;
+            if (!zip || zip.length < 5) {
+                showToast("Zip code target parameter must be supplied.");
+                return;
+            }
+            // Map parameters into eligibility wizard and open step 4
+            wizardData.category = category;
+            wizardData.ownership = heroOwnerStatusSelected;
+            wizardData.zip = zip;
+            
+            openWizard();
+            wizardStep = 4;
+            updateWizardUI();
+        }
+
+        // TOAST ENGINE
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-msg');
+            toastMsg.innerText = message;
+            
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        // SUBMIT SECURE CONTACT DEK
+        function submitContact() {
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const msg = document.getElementById('contact-msg').value;
+            if (!name || !email || !msg) {
+                showToast("All contact fields require inputs.");
+                return;
+            }
+            showToast("Secure contact transmission initialized.");
+            document.getElementById('contact-name').value = '';
+            document.getElementById('contact-email').value = '';
+            document.getElementById('contact-subject').value = '';
+            document.getElementById('contact-msg').value = '';
+        }
+
+        // SUBMIT OPT OUT
+        function submitOptOut() {
+            const name = document.getElementById('opt-name').value;
+            const email = document.getElementById('opt-email').value;
+            if (!name || !email) {
+                showToast("Opt-out credentials require completed fields.");
+                return;
+            }
+            showToast("Opt-out Removal Query Filed CCPA Secure.");
+            document.getElementById('opt-name').value = '';
+            document.getElementById('opt-email').value = '';
+        }
+    </script>
+</body>
+</html>
